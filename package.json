@@ -2,7 +2,7 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "Namaste React",
-  "main": "app.js",
+  
   "scripts": {
     "test": "jest"
   },
@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/Manan080802/namaste-react/issues"
   },
-  "homepage": "https://github.com/Manan080802/namaste-react#readme"
+  "homepage": "https://github.com/Manan080802/namaste-react#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "browserslist":[
+    "last 2 versions"
+  ]
 }
