@@ -1,0 +1,19 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "Namaste React",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manan080802/namaste-react.git"
+  },
+  "author": "Manan Vaghasiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manan080802/namaste-react/issues"
+  },
+  "homepage": "https://github.com/Manan080802/namaste-react#readme"
+}
