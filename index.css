@@ -49,3 +49,18 @@
   text-align: center;
   bottom: 0;
 }
+
+.filter-btn {
+  margin: 10  px;
+  cursor: pointer;
+  width: 150px;
+  height: 60px;
+  background-color: rgb(69, 177, 69);
+  color: white;
+  border: 0px;
+  font-weight: bold;
+  font-size: medium;
+}
+.filter-btn:hover {
+  color: rgb(105, 84, 84);
+}
