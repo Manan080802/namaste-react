@@ -51,7 +51,7 @@
 }
 
 .filter-btn {
-  margin: 10  px;
+  margin: 10 px;
   cursor: pointer;
   width: 150px;
   height: 60px;
@@ -63,4 +63,44 @@
 }
 .filter-btn:hover {
   color: rgb(105, 84, 84);
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* padding: 15px; */
+}
+
+.shimmer-card {
+  margin: 8px;
+  padding: 10px;
+  width: 290px;
+  height: 450px;
+  background-color: rgb(242, 242, 245);
+  border-radius: 15px;
+}
+.login {
+  cursor: pointer;
+  padding: 0 20px;
+  border: none;
+  background-color: rgb(15, 81, 81);
+  color: white;
+}
+
+.logout {
+  cursor: pointer;
+  padding: 0 20px;
+  border: none;
+  background-color: rgb(81, 15, 21);
+  color: white;
+}
+.search-container {
+  border: 2px black;
+  margin: 5px;
+  padding: 5px;
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
 }
