@@ -24,9 +24,14 @@
   /* height: 450px; */
   background-color: rgb(222, 222, 230);
   border-radius: 15px;
+  color: black;
+  text-decoration: none;
 }
 .search {
   padding: 10px;
+}
+a {
+  text-decoration: none;
 }
 .res-logo {
   width: 100%;
@@ -37,11 +42,14 @@
 .res-card:hover {
   cursor: pointer;
   border: 1px solid black;
+  color: black;
 }
 
 .res-container {
   display: flex;
   flex-wrap: wrap;
+  color: black;
+  text-decoration: none;
   /* padding: 15px; */
 }
 .footer {
