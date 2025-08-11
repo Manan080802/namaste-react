@@ -16,7 +16,14 @@ class UserClass extends React.Component {
       userinfo: data,
     });
   }
-  render() {  
+  componentDidUpdate() {
+    console.log("componentDidUpdate");
+  }
+
+  componentWillUnmount() {
+    console.log("componentWillUnmount");
+  }
+  render() {
     return (
       <div className="user-card">
         <img
