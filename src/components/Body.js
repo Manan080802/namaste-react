@@ -4,11 +4,13 @@ import { resList } from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   let [RestaurantList, setRestaurantList] = useState([]);
   let [FilterRestaurantList, setFilterRestaurantList] = useState([]);
   let [searchName, setSearchName] = useState("");
+  const IsOnline = useOnlineStatus();
 
   useEffect(() => {
     fetchData();
@@ -43,39 +45,43 @@ const Body = () => {
     setFilterRestaurantList(FilterRestaurantList);
   };
 
-  return RestaurantList.length == 0 ? (
-    <Shimmer />
-  ) : (
-    <div className="body">
-      <div className="filter">
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Enter the Restaurant "
-            className="search-box"
-            value={searchName}
-            onChange={(e) => setSearchName(e.target.value)}
-          />
-          <button
-            onClick={() => {
-              searchRestaurant(searchName);
-            }}
-          >
-            search
+  return IsOnline ? (
+    RestaurantList.length == 0 ? (
+      <Shimmer />
+    ) : (
+      <div className="body">
+        <div className="filter">
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Enter the Restaurant "
+              className="search-box"
+              value={searchName}
+              onChange={(e) => setSearchName(e.target.value)}
+            />
+            <button
+              onClick={() => {
+                searchRestaurant(searchName);
+              }}
+            >
+              search
+            </button>
+          </div>
+          <button className="filter-btn" onClick={filterTopRated}>
+            Top rated Restaurant
           </button>
         </div>
-        <button className="filter-btn" onClick={filterTopRated}>
-          Top rated Restaurant
-        </button>
+        <div className="res-container">
+          {FilterRestaurantList.map((res) => (
+            <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
+              <RestaurantCard key={res.info.id} resData={res} />
+            </Link>
+          ))}
+        </div>
       </div>
-      <div className="res-container">
-        {FilterRestaurantList.map((res) => (
-          <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
-            <RestaurantCard key={res.info.id} resData={res} />
-          </Link>
-        ))}
-      </div>
-    </div>
+    )
+  ) : (
+    <h1>you are offline</h1>
   );
 };
 
