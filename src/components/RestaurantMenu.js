@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../../utils/constant";
+import { MENU_API } from "../utils/constant";
 
 const RestaurantMenu = () => {
   const [restInfo, setResInfo] = useState(null);

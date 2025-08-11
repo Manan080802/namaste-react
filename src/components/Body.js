@@ -1,6 +1,6 @@
 // import resList from "../../swiggy_res_list.json";
 import RestaurantCard from "./RestaurantCard";
-import { resList } from "../../utils/mockData";
+import { resList } from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
