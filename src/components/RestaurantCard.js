@@ -29,4 +29,31 @@ const RestaurantCard = (props) => {
   );
 };
 
+export const wthPromotedCard = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="bg-green-900 text-white absolute p-2 m-4 rounded-1xl">
+          Most people like ❤️
+        </label>
+
+        <RestaurantCard {...props}></RestaurantCard>
+      </div>
+    );
+  };
+};
+
+export const discardCard = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="bg-red-900 text-white absolute p-2 m-4 rounded-1xl">
+          Avoid people👎
+        </label>
+
+        <RestaurantCard {...props}></RestaurantCard>
+      </div>
+    );
+  };
+};
 export default RestaurantCard;

@@ -1,5 +1,5 @@
 // import resList from "../../swiggy_res_list.json";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { wthPromotedCard, discardCard } from "./RestaurantCard";
 import { resList } from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
@@ -11,6 +11,9 @@ const Body = () => {
   let [FilterRestaurantList, setFilterRestaurantList] = useState([]);
   let [searchName, setSearchName] = useState("");
   const IsOnline = useOnlineStatus();
+
+  const MostLikeRes = wthPromotedCard(RestaurantCard);
+  const DiscardRes = discardCard(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -79,7 +82,16 @@ const Body = () => {
         <div className=" flex flex-wrap">
           {FilterRestaurantList.map((res) => (
             <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
-              <RestaurantCard key={res.info.id} resData={res} />
+              {res.info.avgRating > 4.5 ? (
+                <MostLikeRes key={res.info.id} resData={res}></MostLikeRes>
+              ) : res.info.avgRating < 4 ? (
+                <DiscardRes key={res.info.id} resData={res}></DiscardRes>
+              ) : (
+                <RestaurantCard
+                  key={res.info.id}
+                  resData={res}
+                ></RestaurantCard>
+              )}
             </Link>
           ))}
         </div>
