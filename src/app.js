@@ -11,7 +11,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
 // import Grocery from "./components/Grocery";
 
-const Grocery = lazy(() => import("./components/Grocery"));  
+const Grocery = lazy(() => import("./components/Grocery"));
 
 const About = lazy(() => import("./components/About"));
 
