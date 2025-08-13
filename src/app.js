@@ -18,16 +18,17 @@ const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
   const [userInfo, setUserInfo] = useState({});
+  console.log("userInfo :>> ", userInfo);
 
   useEffect(() => {
     const data = {
       name: "Manan Vaghasiya",
       email: "manavaghasiya882@gmail.com",
     };
-    setUserInfo(data);
+    setUserInfo(data.email);
   }, []);
   return (
-    <UserContext.Provider value={{ loggedUser: userInfo.email }}>
+    <UserContext.Provider value={{ loggedUser: userInfo, setUserInfo }}>
       <div className="app">
         <Header />
         <Outlet />
