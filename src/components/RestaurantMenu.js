@@ -8,6 +8,8 @@ import RestCategory from "./RestCategory";
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const restInfo = useRestaurantMenu(resId);
+  let [showIndex, setShowIndex] = useState(0);
+  let [showCategory, setShowCategory] = useState(true);
 
   if (restInfo === null) return <Shimmer />;
   //   console.log("restInfo :>> ", restInfo?.cards[2]?.card?.card?.info);
@@ -57,10 +59,14 @@ const RestaurantMenu = () => {
       </div>
       <p className="text-2xl font-bold">Menu</p>
       <div className="py-5">
-        {categories.map((category) => (
+        {categories.map((category, index) => (
           <RestCategory
             key={category.card.card.categoryId}
             category={category.card.card}
+            showItems={index == showIndex ? true : false}
+            setShowIndex={() =>
+              setShowIndex(index === showIndex ? null : index)
+            }
           ></RestCategory>
         ))}
       </div>
