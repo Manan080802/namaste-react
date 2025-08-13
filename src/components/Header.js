@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Logo_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   let [btnName, setBtnName] = useState("Login");
+  let { loggedUser } = useContext(UserContext);
   const isOnline = useOnlineStatus();
   const [isMenuOpen, setIsMenuOpen] = useState(false); // mobile menu state
 
@@ -62,7 +64,6 @@ const Header = () => {
                 </li>
               </ul>
             </nav>
-
             {/* Buttons */}
             <div className="flex items-center gap-4">
               <button
@@ -98,6 +99,11 @@ const Header = () => {
                   </svg>
                 </button>
               </div>
+            </div>
+            <div>
+              <span className="text-white font-bold">
+                {btnName.toLowerCase() == "logout" ? loggedUser : ""}
+              </span>
             </div>
           </div>
         </div>

@@ -3,7 +3,6 @@ import ItemList from "./ItemList";
 
 const RestCategory = (props) => {
   const { category, showItems, setShowIndex } = { ...props } || {};
-  console.log("setShowIndex :>> ", setShowIndex);
   // const [showItems, setShowItems] = useState(false);
 
   const handleClick = () => {
