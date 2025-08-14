@@ -9,7 +9,6 @@ const Header = () => {
   let [btnName, setBtnName] = useState("Login");
   let { loggedUser } = useContext(UserContext);
   const cartList = useSelector((state) => state.cart.items);
-  console.log("cartList :>> ", cartList);
   const isOnline = useOnlineStatus();
   const [isMenuOpen, setIsMenuOpen] = useState(false); // mobile menu state
 
@@ -64,10 +63,12 @@ const Header = () => {
                   <Link className="text-white hover:text-gray-300" to="/">
                     Cart{" "}
                     {cartList.length > 0
-                      ? cartList.reduce(
+                      ? "( " +
+                        cartList.reduce(
                           (total, item) => total + (item.qty || 0),
                           0
-                        )
+                        ) +
+                        " items )"
                       : ""}
                   </Link>
                 </li>
@@ -164,7 +165,7 @@ const Header = () => {
                   to="/"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Cart {console.log(cartList.length)}
+                  Cart
                 </Link>
               </li>
             </ul>

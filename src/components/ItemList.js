@@ -1,12 +1,16 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CDN_URL } from "../utils/constant";
-import { addCard } from "../utils/cartSlice";
+import { addCard, removeCard } from "../utils/cartSlice";
 const ItemList = (props) => {
   const { itemCards } = { ...props };
   const dispatch = useDispatch();
+  const cartList = useSelector((state) => state.cart.items);
 
   const addItem = (itemCards) => {
     dispatch(addCard(itemCards));
+  };
+  const removeItem = (itemCards) => {
+    dispatch(removeCard(itemCards));
   };
   return (
     <div className="my-5 border-b-2">
@@ -47,7 +51,7 @@ const ItemList = (props) => {
           </p>
           <p className="font-light">{itemCards?.description}</p>
         </div>
-        <div className="image  w-2/12 p-4">
+        {/* <div className="image  w-2/12 p-4">
           <img src={CDN_URL + itemCards?.imageId} className="rounded-3xl" />
           <div className="absolute">
             <button
@@ -56,6 +60,39 @@ const ItemList = (props) => {
             >
               Add +
             </button>
+          </div>
+        </div> */}
+        <div className="image w-2/12 p-4 my-2">
+          <div className="relative">
+            {/* Product Image */}
+            <img
+              src={CDN_URL + itemCards?.imageId}
+              className="rounded-3xl w-full"
+            />
+
+            {/* Floating control outside bottom */}
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-white rounded-md shadow-lg px-3 py-1 ">
+              {/* Remove Button */}
+              <button
+                className="text-red-500 font-bold text-lg px-2 cursor-pointer "
+                onClick={() => removeItem(itemCards)}
+              >
+                -
+              </button>
+
+              {/* Quantity */}
+              <span className="font-bold text-gray-700 text-lg">
+                {cartList.find((item) => item.id === itemCards.id)?.qty || 0}
+              </span>
+
+              {/* Add Button */}
+              <button
+                className="text-green-500 font-bold text-lg px-2 cursor-pointer"
+                onClick={() => addItem(itemCards)}
+              >
+                +
+              </button>
+            </div>
           </div>
         </div>
       </div>

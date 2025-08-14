@@ -19,8 +19,19 @@ const cartSlice = createSlice({
         state.items.push({ ...action.payload, qty: 1 });
       }
     },
+    removeCard: (state, action) => {
+      const existingCard = state.items.find(
+        (card) => card.id === action.payload.id
+      );
+      if (existingCard && existingCard.qty > 0) {
+        // Increment qty
+        existingCard.qty = (existingCard.qty || 0) - 1;
+      } else if (existingCard && existingCard.qty <= 0) {
+        existingCard.qty = 0;
+      }
+    },
   },
 });
 
-export const { addCard } = cartSlice.actions;
+export const { addCard, removeCard } = cartSlice.actions;
 export default cartSlice.reducer;
