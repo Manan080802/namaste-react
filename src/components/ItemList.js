@@ -1,7 +1,13 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constant";
-
+import { addCard } from "../utils/cartSlice";
 const ItemList = (props) => {
   const { itemCards } = { ...props };
+  const dispatch = useDispatch();
+
+  const addItem = (itemCards) => {
+    dispatch(addCard(itemCards));
+  };
   return (
     <div className="my-5 border-b-2">
       <div className="flex justify-between">
@@ -44,7 +50,10 @@ const ItemList = (props) => {
         <div className="image  w-2/12 p-4">
           <img src={CDN_URL + itemCards?.imageId} className="rounded-3xl" />
           <div className="absolute">
-            <button className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-white text-green-500 font-bold px-4 py-1 rounded-md shadow-2xl cursor-pointer">
+            <button
+              className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-white text-green-500 font-bold px-4 py-1 rounded-md shadow-2xl cursor-pointer"
+              onClick={() => addItem(itemCards)}
+            >
               Add +
             </button>
           </div>

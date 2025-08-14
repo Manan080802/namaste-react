@@ -3,10 +3,13 @@ import { Logo_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   let [btnName, setBtnName] = useState("Login");
   let { loggedUser } = useContext(UserContext);
+  const cartList = useSelector((state) => state.cart.items);
+  console.log("cartList :>> ", cartList);
   const isOnline = useOnlineStatus();
   const [isMenuOpen, setIsMenuOpen] = useState(false); // mobile menu state
 
@@ -59,7 +62,13 @@ const Header = () => {
                 </li>
                 <li>
                   <Link className="text-white hover:text-gray-300" to="/">
-                    Cart
+                    Cart{" "}
+                    {cartList.length > 0
+                      ? cartList.reduce(
+                          (total, item) => total + (item.qty || 0),
+                          0
+                        )
+                      : ""}
                   </Link>
                 </li>
               </ul>
@@ -155,7 +164,7 @@ const Header = () => {
                   to="/"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Cart
+                  Cart {console.log(cartList.length)}
                 </Link>
               </li>
             </ul>

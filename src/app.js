@@ -10,6 +10,8 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 // import Grocery from "./components/Grocery";
 
 const Grocery = lazy(() => import("./components/Grocery"));
@@ -28,14 +30,16 @@ const AppLayout = () => {
     setUserInfo(data.email);
   }, []);
   return (
-    <UserContext.Provider value={{ loggedUser: userInfo, setUserInfo }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-        {/* <Body /> */}
-        <Footer />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedUser: userInfo, setUserInfo }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+          {/* <Body /> */}
+          <Footer />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
