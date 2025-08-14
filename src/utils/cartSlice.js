@@ -36,8 +36,11 @@ const cartSlice = createSlice({
         );
       }
     },
+    cancelCard: (state, action) => {
+      state.items.length = 0;
+    },
   },
 });
 
-export const { addCard, removeCard } = cartSlice.actions;
+export const { addCard, removeCard, cancelCard } = cartSlice.actions;
 export default cartSlice.reducer;
