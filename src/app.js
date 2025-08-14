@@ -12,14 +12,13 @@ import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
-import Cart from "./components/Cart";
 // import Grocery from "./components/Grocery";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const About = lazy(() => import("./components/About"));
 
-const cart = lazy(() => import("./components/Cart"));
+const Cart = lazy(() => import("./components/Cart"));
 
 const AppLayout = () => {
   const [userInfo, setUserInfo] = useState({});
