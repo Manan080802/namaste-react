@@ -13,7 +13,6 @@ const Body = () => {
   let [searchName, setSearchName] = useState("");
 
   let { loggedUser, setUserInfo } = useContext(UserContext);
-  console.log("setUserInfo :>> ", setUserInfo);
   const IsOnline = useOnlineStatus();
 
   const MostLikeRes = wthPromotedCard(RestaurantCard);

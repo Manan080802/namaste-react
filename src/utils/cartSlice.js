@@ -23,11 +23,17 @@ const cartSlice = createSlice({
       const existingCard = state.items.find(
         (card) => card.id === action.payload.id
       );
-      if (existingCard && existingCard.qty > 0) {
-        // Increment qty
-        existingCard.qty = (existingCard.qty || 0) - 1;
+      if (existingCard && existingCard.qty >= 1) {
+        existingCard.qty -= 1;
+        if (existingCard.qty == 0) {
+          state.items = state.items.filter(
+            (card) => card.id !== action.payload.id
+          );
+        }
       } else if (existingCard && existingCard.qty <= 0) {
-        existingCard.qty = 0;
+        state.items = state.items.filter(
+          (card) => card.id !== action.payload.id
+        );
       }
     },
   },

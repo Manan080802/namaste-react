@@ -60,7 +60,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-white hover:text-gray-300" to="/">
+                  <Link className="text-white hover:text-gray-300" to="/cart">
                     Cart{" "}
                     {cartList.length > 0
                       ? "( " +
