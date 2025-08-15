@@ -18,6 +18,12 @@
   },
   "homepage": "https://github.com/Manan080802/namaste-react#readme",
   "devDependencies": {
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.0",
+    "babel-jest": "^30.0.5",
+    "jest": "^30.0.5",
     "parcel": "^2.15.4"
   },
   "dependencies": {
