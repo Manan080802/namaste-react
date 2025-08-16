@@ -13,7 +13,7 @@ const ItemList = (props) => {
     dispatch(removeCard(itemCards));
   };
   return (
-    <div className="my-5 border-b-2">
+    <div className="my-5 border-b-2" data-testid="foodItems">
       <div className="flex justify-between">
         <div className="description my-3 px-3 w-9/12">
           <p>
@@ -81,7 +81,10 @@ const ItemList = (props) => {
               </button>
 
               {/* Quantity */}
-              <span className="font-bold text-gray-700 text-lg">
+              <span
+                className="font-bold text-gray-700 text-lg"
+                data-testid="qty"
+              >
                 {cartList.find((item) => item.id === itemCards.id)?.qty || 0}
               </span>
 
