@@ -11,7 +11,10 @@ const RestaurantCard = (props) => {
     sla,
   } = resData?.info;
   return (
-    <div className="m-4 p-4 w-[300px] bg-sky-100 rounded-2xl">
+    <div
+      className="m-4 p-4 w-[300px] bg-sky-100 rounded-2xl"
+      data-testid="res-card"
+    >
       <img
         src={CDN_URL + cloudinaryImageId}
         className="res-logo rounded-4xl"

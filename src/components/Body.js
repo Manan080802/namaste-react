@@ -63,6 +63,7 @@ const Body = () => {
               placeholder="Enter the Restaurant "
               className="search-box border border-gray-300 rounded-md p-2 h-15 text-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 "
               value={searchName}
+              data-testid='search'
               onChange={(e) => setSearchName(e.target.value)}
             />
             <button
