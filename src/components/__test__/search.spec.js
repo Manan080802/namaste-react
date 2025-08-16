@@ -30,4 +30,20 @@ describe("search component", () => {
     let card = screen.getAllByTestId("res-card");
     expect(card.length).toBe(4);
   });
+
+  it("should filter in body", async () => {
+    await act(() =>
+      render(
+        <BrowserRouter>
+          <Provider store={appStore}>
+            <Body />
+          </Provider>
+        </BrowserRouter>
+      )
+    );
+    const topRes = screen.getByText("Top rated Restaurant");
+    fireEvent.click(topRes);
+    let card = screen.getAllByTestId("res-card");
+    expect(card.length).toBe(8);
+  });
 });

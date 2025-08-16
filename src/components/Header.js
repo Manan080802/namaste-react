@@ -117,60 +117,6 @@ const Header = () => {
             </div>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-2 bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
-            <ul className="space-y-2">
-              <li>{isOnline ? "🟢" : "🔴"}</li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-white hover:text-gray-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about"
-                  className="text-white hover:text-gray-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="text-white hover:text-gray-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/grocery"
-                  className="text-white hover:text-gray-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Grocery
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-white hover:text-gray-300"
-                  to="/"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Cart
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}
       </div>
     </header>
   );
