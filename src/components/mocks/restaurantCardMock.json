@@ -1,0 +1,77 @@
+{
+  "info": {
+    "id": "801424",
+    "name": "Makhani Darbar",
+    "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/20/ae78356a-6a57-4971-bb1d-d2efc610221e_801424.JPG",
+    "locality": "OPP VIJAY PARK SOCIETY",
+    "areaName": "Bapu nagar",
+    "costForTwo": "₹500 for two",
+    "cuisines": [
+      "Biryani",
+      "North Indian",
+      "Kebabs",
+      "Mughlai",
+      "Beverages",
+      "Desserts"
+    ],
+    "avgRating": 3.8,
+    "parentId": "478595",
+    "avgRatingString": "3.8",
+    "totalRatingsString": "72",
+    "sla": {
+      "deliveryTime": 34,
+      "lastMileTravel": 3,
+      "serviceability": "SERVICEABLE",
+      "slaString": "30-35 mins",
+      "lastMileTravelString": "3.0 km",
+      "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+      "nextCloseTime": "2025-08-16 23:59:00",
+      "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+      "entityBadges": {
+        "imageBased": {},
+        "textBased": {},
+        "textExtendedBadges": {}
+      }
+    },
+    "aggregatedDiscountInfoV3": {
+      "header": "ITEMS",
+      "subHeader": "AT ₹99",
+      "discountCalloutInfo": {
+        "message": "Free Delivery",
+        "logoCtx": {
+          "logo": "v1655895371/free_delivery_logo_hqipbo.png"
+        }
+      }
+    },
+    "differentiatedUi": {
+      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      "differentiatedUiMediaDetails": {
+        "lottie": {},
+        "video": {}
+      }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {},
+    "externalRatings": {
+      "aggregatedRating": {
+        "rating": "--"
+      }
+    },
+    "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+  },
+  "analytics": {
+    "context": "seo-data-bbb27819-04b1-41e5-b3a6-4127dcf57776"
+  },
+  "cta": {
+    "link": "https://www.swiggy.com/city/ahmedabad/makhani-darbar-opp-vijay-park-society-bapu-nagar-rest801424",
+    "type": "WEBLINK"
+  }
+}

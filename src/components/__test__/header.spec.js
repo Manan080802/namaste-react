@@ -30,7 +30,7 @@ describe("header component is loaded", () => {
     );
     const loginButton = screen.getByRole("button", { name: "Login" });
     fireEvent.click(loginButton);
-    const logoutButton = screen.getByRole("button", { name: "Logout  " });
+    const logoutButton = screen.getByRole("button", { name: "Logout" });
     expect(logoutButton).toBeInTheDocument();
   });
 });
